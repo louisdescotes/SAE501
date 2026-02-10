@@ -59,7 +59,7 @@ const MovingClouds = () => {
       if (!cloud) return;
       cloud.position.x += clouds[idx].speed;
       if (cloud.position.x > 13) {
-        cloud.position.x = -13;
+        cloud.position.x = -20;
       }
     });
   });
