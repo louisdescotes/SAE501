@@ -38,6 +38,11 @@ header {
     left: 0;
 }
 
+main {
+    position: relative;
+    z-index: 50;
+}
+
 *:focus {
     border-radius: 2px;
     outline: 2px solid $primary;
@@ -137,6 +142,12 @@ html.lenis {
     font-size: clamp(26px, 1.92vw + .5rem, 45px);
     line-height: 1.2em
 }
+
+.type-64 {
+    font-size: clamp(32px, 3.4vw + 1rem, 64px);
+    line-height: 1em
+}
+
 
 .type-80 {
     font-size: clamp(32px, 3.4vw + 1rem, 80px);
