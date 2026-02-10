@@ -1,9 +1,12 @@
 "use client";
 
-import { Canvas, useLoader } from "@react-three/fiber";
-import Grass from "../components/grass";
-import { PerspectiveCamera } from "@react-three/drei";
-import Butterflies from "../components/butterflies";
+import { Canvas, useFrame } from "@react-three/fiber";
+import Grass from "../components/Grass";
+import { Cloud, Clouds, PerspectiveCamera } from "@react-three/drei";
+import Butterflies from "../components/Butterflies";
+import * as THREE from "three";
+import { useRef } from "react";
+import MovingClouds from "../components/Clouds";
 
 const Scene = () => {
   return (
@@ -27,6 +30,7 @@ const Scene = () => {
       />
       <Butterflies />
       <Grass />
+      <MovingClouds />
     </Canvas>
   );
 };
