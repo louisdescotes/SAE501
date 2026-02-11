@@ -1,3 +1,6 @@
+@use "@styles/global.scss" as *;
+@use "@styles/variables.scss" as *;
+
 .hero {
     display: flex;
     align-items: center;
@@ -14,17 +17,17 @@
         margin-bottom: 128px;
 
         h1 {
-            font-family: 'apocNormal';
+            font-family: $font-accent;
             line-height: normal;
             margin: 0;
-            color: #572700;
+            color: $secondary;
 
         }
 
         p {
-            color: #572700;
+            color: secondary;
             text-align: center;
-            font-family: "museoSans";
+            font-family: $primary;
             font-style: normal;
             font-weight: 300;
             line-height: normal;

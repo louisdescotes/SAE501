@@ -3,12 +3,14 @@
 import { Clouds } from "@react-three/drei";
 import Scene from "./scene";
 import Hero from "./sections/hero";
+import One from "./sections/one";
 
 const Home = () => {
   return (
     <>
-      <main className="grid-p">
+      <main>
         <Hero />
+        <One />
       </main>
       <Scene />
     </>

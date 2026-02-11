@@ -6,10 +6,11 @@ import { useRef, useEffect, useState } from "react";
 
 interface Props {
   text: string;
-  className: string;
+  className?: string;
+  delay?: number;
 }
 
-export default function TextAppear({ text, className }: Props) {
+export default function TextAppear({ text, className, delay = 0 }: Props) {
   const [lines, setLines] = useState<string[]>([]);
   const textRef = useRef<HTMLDivElement>(null);
 
@@ -46,7 +47,7 @@ export default function TextAppear({ text, className }: Props) {
       <motion.div
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.8 }}
       >
         {lines.map((line, index) => (
           <div className="textAppear-line" key={index}>
@@ -59,8 +60,8 @@ export default function TextAppear({ text, className }: Props) {
               transition={{
                 type: "spring",
                 damping: 80,
-                stiffness: 500,
-                delay: index * 0.1,
+                stiffness: 550,
+                delay: delay + index * 0.1,
               }}
             >
               {line}
