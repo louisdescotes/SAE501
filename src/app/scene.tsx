@@ -1,11 +1,9 @@
 "use client";
 
-import { Canvas, useFrame } from "@react-three/fiber";
+import { Canvas } from "@react-three/fiber";
 import Grass from "../components/Grass";
-import { Cloud, Clouds, PerspectiveCamera } from "@react-three/drei";
+import { PerspectiveCamera } from "@react-three/drei";
 import Butterflies from "../components/Butterflies";
-import * as THREE from "three";
-import { useRef } from "react";
 import MovingClouds from "../components/Clouds";
 
 const Scene = () => {
