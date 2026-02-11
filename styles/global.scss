@@ -109,6 +109,41 @@ html.lenis {
     padding: 0 $side-gap;
 }
 
+button {
+    appearance: none;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: fit-content;
+    height: fit-content;
+
+    padding: 10px 24px;
+
+    background-color: $primary;
+    color: $white;
+    border-radius: 6px;
+    background: #D9772A;
+    border: 0;
+
+    font-size: 16px;
+    font-family: $font-accent;
+    line-height: normal;
+
+    cursor: pointer;
+}
+
+.white {
+    background-color: $white !important;
+    color: $primary;
+    background: #D9772A;
+
+    &:focus {
+        outline-color: $white;
+    }
+}
+
 /** MODIFY **/
 
 .type-16 {
