@@ -1,13 +1,25 @@
 @use "@styles/global.scss" as *;
 @use "@styles/variables.scss" as *;
 
-.one {
-    background-color: $white;
-    height: 100svh;
+.four-cont {
     z-index: 50;
     position: relative;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 100svh;
+
+    background-color: $primary;
+}
+
+.four {
+    grid-template-areas: "number header";
+
     &-header {
+        grid-area: header / 4 / header / 10;
+
         height: 100%;
         width: fit-content;
 
@@ -19,17 +31,37 @@
         gap: 18px;
 
         &-title {
-            font-family: $font-accent;
             margin: 0;
-            color: $secondary;
+            color: $white;
+
+            span {
+                font-family: $font-accent;
+            }
         }
 
         &-text {
-            color: $secondary;
+            color: $white;
             font-family: $font;
             font-style: normal;
             font-weight: 300;
             margin: 0;
         }
+
+        &-send {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+    }
+
+    &-number {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    &-hole {
+        display: none;
     }
 }

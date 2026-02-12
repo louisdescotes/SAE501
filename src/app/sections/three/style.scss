@@ -1,13 +1,38 @@
 @use "@styles/global.scss" as *;
 @use "@styles/variables.scss" as *;
 
-.one {
-    background-color: $white;
-    height: 100svh;
+.three-cont {
     z-index: 50;
     position: relative;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 100svh;
+
+    background-color: $white;
+
+    &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+
+        background-image: url("/lines.svg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        opacity: .3;
+        z-index: -1;
+    }
+}
+
+.three {
+    grid-template-areas: "header number";
+
     &-header {
+        grid-area: header / span 6;
+
         height: 100%;
         width: fit-content;
 
@@ -19,9 +44,12 @@
         gap: 18px;
 
         &-title {
-            font-family: $font-accent;
             margin: 0;
             color: $secondary;
+
+            span {
+                font-family: $font-accent;
+            }
         }
 
         &-text {
@@ -31,5 +59,10 @@
             font-weight: 300;
             margin: 0;
         }
+    }
+
+    &-number {
+        grid-area: number / span 6;
+        text-align: end;
     }
 }

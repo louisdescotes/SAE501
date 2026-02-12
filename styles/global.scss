@@ -109,6 +109,29 @@ html.lenis {
     padding: 0 $side-gap;
 }
 
+.columns {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 20px;
+}
+
+.number {
+    &-section {
+        color: rgba($secondary, 0.30);
+
+        font-size: 675px;
+
+        font-family: $font-accent;
+        font-style: italic;
+        line-height: 120%;
+        letter-spacing: -13.5px;
+    }
+
+    &-white {
+        color: rgba(250, 250, 248, 0.10);
+    }
+}
+
 button {
     appearance: none;
 
@@ -170,6 +193,12 @@ button {
 
 .type-40 {
     font-size: clamp(24px, 1.75vw + .5rem, 40px);
+    line-height: 1.2em
+}
+
+.type-42,
+.type-42>span {
+    font-size: clamp(28px, 1.75vw + .5rem, 42px);
     line-height: 1.2em
 }
 

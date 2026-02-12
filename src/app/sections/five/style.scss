@@ -1,13 +1,25 @@
 @use "@styles/global.scss" as *;
 @use "@styles/variables.scss" as *;
 
-.one {
-    background-color: $white;
-    height: 100svh;
+.five-cont {
     z-index: 50;
     position: relative;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 100svh;
+
+    background-color: $white;
+}
+
+.five {
+    grid-template-areas: "header number";
+
     &-header {
+        grid-area: header / span 6;
+
         height: 100%;
         width: fit-content;
 
@@ -19,9 +31,12 @@
         gap: 18px;
 
         &-title {
-            font-family: $font-accent;
             margin: 0;
             color: $secondary;
+
+            span {
+                font-family: $font-accent;
+            }
         }
 
         &-text {
@@ -31,5 +46,10 @@
             font-weight: 300;
             margin: 0;
         }
+    }
+
+    &-number {
+        grid-area: number / span 6;
+        text-align: end;
     }
 }
