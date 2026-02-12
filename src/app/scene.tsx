@@ -22,7 +22,7 @@ const CameraController = () => {
   useFrame(() => {
     const zoom = 8 - scrollY * 0.003;
     camera.position.z = Math.max(2, zoom);
-    camera.position.y = 2.5 - scrollY * 0.0014;
+    camera.position.y = 2.5 - scrollY * 0.0008;
     camera.position.x = 0 - scrollY * -0.002;
     camera.rotation.y = scrollY * 0.0003;
   });

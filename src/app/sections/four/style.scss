@@ -1,0 +1,35 @@
+@use "@styles/global.scss" as *;
+@use "@styles/variables.scss" as *;
+
+.one {
+    background-color: $white;
+    height: 100svh;
+    z-index: 50;
+    position: relative;
+
+    &-header {
+        height: 100%;
+        width: fit-content;
+
+        margin: 0 auto;
+
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 18px;
+
+        &-title {
+            font-family: $font-accent;
+            margin: 0;
+            color: $secondary;
+        }
+
+        &-text {
+            color: $secondary;
+            font-family: $font;
+            font-style: normal;
+            font-weight: 300;
+            margin: 0;
+        }
+    }
+}
