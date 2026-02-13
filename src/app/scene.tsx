@@ -1,6 +1,6 @@
 "use client";
 
-import { Canvas } from "@react-three/fiber";
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { useEffect, useState, Suspense, RefObject } from "react";
 import { PerspectiveCamera } from "@react-three/drei";
 
@@ -9,8 +9,31 @@ import Butterflies from "../components/Butterflies";
 import MovingClouds from "../components/Clouds";
 import Human from "../components/Human";
 
+function CameraController({ progress }: { progress: number }) {
+  const { camera } = useThree();
+
+  useFrame(() => {
+    const isHumanSection = progress > 0 && progress < 1;
+
+    if (!isHumanSection) {
+      const scroll = window.scrollY;
+
+      const zoom = 8 - scroll * 0.003;
+      camera.position.z = Math.max(2, zoom);
+      camera.position.y = 2.5 - scroll * 0.0008;
+      camera.position.x = scroll * 0.002;
+      camera.rotation.y = scroll * 0.0002;
+    } else {
+      camera.position.set(0, 0, 5);
+      camera.rotation.set(0, 0, 0);
+    }
+  });
+
+  return null;
+}
+
 type Props = {
-  sectionRef: RefObject<HTMLElement>;
+  sectionRef: React.RefObject<HTMLElement | null>;
 };
 
 const Scene = ({ sectionRef }: Props) => {
@@ -55,6 +78,7 @@ const Scene = ({ sectionRef }: Props) => {
       <ambientLight intensity={0.5} />
       <directionalLight position={[5, 10, 5]} intensity={2} />
       <PerspectiveCamera makeDefault position={[0, 3, 8]} />
+      <CameraController progress={sectionProgress} />
 
       <Butterflies visible={!isSectionActive} />
       <Grass visible={!isSectionActive} />

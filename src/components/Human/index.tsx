@@ -23,7 +23,7 @@ const Human = ({ progress }: { progress: number }) => {
     });
 
     if (!visible) return;
-    const y = -7 + progress * 8;
+    const y = -10 + progress * 8;
 
     ref.current.position.set(0, y, camera.position.z - 5);
   });
