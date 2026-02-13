@@ -11,7 +11,8 @@ const Three = () => {
           <p className="type-18 three-header-text">
             Likes, vues, notifications, réponses instantanées… chaque
             interaction rapide agit comme une micro-récompense. Ton cerveau
-            apprend que la validation doit arriver tout de suite, sans délai.
+            apprend que la validation doit arriver tout de suite, sans délai.{" "}
+            <br />
             Résultat : plus les récompenses sont rapides et fréquentes, plus
             l’attente devient difficile à tolérer.
           </p>

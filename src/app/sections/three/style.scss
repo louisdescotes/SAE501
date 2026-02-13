@@ -11,6 +11,8 @@
 
     height: 100svh;
 
+    overflow: hidden;
+
     &::after {
         content: '';
         position: absolute;
@@ -20,8 +22,9 @@
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        opacity: .3;
+        opacity: .8;
         z-index: -1;
+        transform-origin: center bottom;
     }
 }
 

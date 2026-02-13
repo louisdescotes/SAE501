@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 import Scene from "./scene";
 import Hero from "./sections/hero";
@@ -9,12 +9,15 @@ import Two from "./sections/two";
 import Three from "./sections/three";
 import Four from "./sections/four";
 import Five from "./sections/five";
+import Loader from "./loader";
 
 const Home = () => {
   const fourRef = useRef<HTMLElement | null>(null);
+  const [loadingFinished, setLoadingFinished] = useState(false);
 
   return (
     <>
+      <Scene sectionRef={fourRef} loadingComplete={loadingFinished} />
       <main>
         <Hero />
         <One />
@@ -24,7 +27,7 @@ const Home = () => {
         <Five />
       </main>
 
-      <Scene sectionRef={fourRef} />
+      {!loadingFinished && <Loader onFinish={() => setLoadingFinished(true)} />}
     </>
   );
 };
