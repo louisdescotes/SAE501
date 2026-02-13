@@ -135,8 +135,8 @@ class GrassGeometry extends THREE.BufferGeometry {
   }
 }
 
-export default function Grass({ size = 20, count = 15000 }) {
-  const materialRef = useRef(null);
+export default function Grass({ size = 20, count = 15000, visible = true }) {
+  const materialRef = useRef<THREE.ShaderMaterial>(null);
   const cloudTexture = useLoader(THREE.TextureLoader, "/cloud.jpg");
 
   useMemo(() => {
@@ -160,14 +160,16 @@ export default function Grass({ size = 20, count = 15000 }) {
   });
 
   return (
-    <mesh geometry={geometry}>
-      <shaderMaterial
-        ref={materialRef}
-        vertexShader={vertexShader}
-        fragmentShader={fragmentShader}
-        side={THREE.DoubleSide}
-        uniforms={uniforms}
-      />
-    </mesh>
+    <group visible={visible}>
+      <mesh geometry={geometry}>
+        <shaderMaterial
+          ref={materialRef}
+          vertexShader={vertexShader}
+          fragmentShader={fragmentShader}
+          side={THREE.DoubleSide}
+          uniforms={uniforms}
+        />
+      </mesh>
+    </group>
   );
 }

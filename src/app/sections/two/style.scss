@@ -58,6 +58,8 @@
     }
 
     &-round {
+        z-index: 50;
+        position: relative;
         background-color: $white;
     }
 }

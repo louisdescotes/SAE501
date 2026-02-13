@@ -7,9 +7,13 @@ import * as THREE from "three";
 interface ButterfliesProps {
   quantity?: number;
   boundary?: number;
+  visible: boolean;
 }
 
-export default function Butterflies({ quantity = 20 }: ButterfliesProps) {
+export default function Butterflies({
+  quantity = 20,
+  visible = true,
+}: ButterfliesProps) {
   const groupRef = useRef<THREE.Group>(null);
   const materialRefs = useRef<THREE.ShaderMaterial[]>([]);
   const { clock } = useThree();
@@ -136,5 +140,5 @@ export default function Butterflies({ quantity = 20 }: ButterfliesProps) {
     });
   });
 
-  return <group ref={groupRef} />;
+  return <group visible={visible} ref={groupRef} />;
 }

@@ -15,7 +15,7 @@ interface CloudData {
   speed: number;
 }
 
-const MovingClouds = () => {
+const MovingClouds = ({ visible = true }) => {
   const cloudRefs = useRef<THREE.Group[]>([]);
 
   const clouds: CloudData[] = [
@@ -65,24 +65,26 @@ const MovingClouds = () => {
   });
 
   return (
-    <Clouds material={THREE.MeshBasicMaterial} position={[0, 0, 0]}>
-      {clouds.map((c, idx) => (
-        <Cloud
-          key={idx}
-          ref={(el) => {
-            if (el) cloudRefs.current[idx] = el;
-          }}
-          seed={c.seed}
-          segments={c.segments}
-          volume={c.volume}
-          scale={c.scale}
-          growth={c.growth}
-          color={c.color}
-          fade={c.fade}
-          position={c.position}
-        />
-      ))}
-    </Clouds>
+    <group visible={visible}>
+      <Clouds material={THREE.MeshBasicMaterial} position={[0, 0, 0]}>
+        {clouds.map((c, idx) => (
+          <Cloud
+            key={idx}
+            ref={(el) => {
+              if (el) cloudRefs.current[idx] = el;
+            }}
+            seed={c.seed}
+            segments={c.segments}
+            volume={c.volume}
+            scale={c.scale}
+            growth={c.growth}
+            color={c.color}
+            fade={c.fade}
+            position={c.position}
+          />
+        ))}
+      </Clouds>
+    </group>
   );
 };
 

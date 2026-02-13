@@ -43,6 +43,15 @@ const Credit = () => {
                 https://sketchfab.com/3d-models/like-button-fec3401d61174e2ab41464eee2c8b1fb
               </a>
             </li>
+            <li>
+              <a
+                href="https://free3d.com/fr/3d-model/rigged-male-human-442626.html"
+                no-follow
+              >
+                https://free3d.com/fr/3d-model/rigged-male-human-442626.html
+              </a>
+              - aaravanimates
+            </li>
           </ul>
         </div>
       </section>
