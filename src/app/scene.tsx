@@ -13,7 +13,7 @@ function CameraController({ progress }: { progress: number }) {
   const { camera } = useThree();
 
   useFrame(() => {
-    const isHumanSection = progress > 0 && progress < 1.5;
+    const isHumanSection = progress > 0 && progress < 1;
 
     if (!isHumanSection) {
       const scroll = window.scrollY;
@@ -22,7 +22,7 @@ function CameraController({ progress }: { progress: number }) {
       camera.position.z = Math.max(2, zoom);
       camera.position.y = 2.5 - scroll * 0.0008;
       camera.position.x = scroll * 0.002;
-      camera.rotation.y = scroll * 0.0002;
+      camera.rotation.y = scroll * 0.0003;
     } else {
       camera.position.set(0, 0, 5);
       camera.rotation.set(0, 0, 0);
@@ -47,9 +47,9 @@ const Scene = ({ sectionRef }: Props) => {
       const vh = window.innerHeight;
 
       const progress = (vh - rect.top) / (vh + rect.height) + 0.5;
+      console.log(progress);
 
       const clamped = Math.min(Math.max(progress, 0), 1.5);
-      console.log(clamped);
       setSectionProgress(clamped);
     };
 
@@ -76,9 +76,10 @@ const Scene = ({ sectionRef }: Props) => {
       }}
     >
       <ambientLight intensity={0.5} />
+
+      <CameraController progress={sectionProgress} />
       <directionalLight position={[5, 10, 5]} intensity={2} />
       <PerspectiveCamera makeDefault position={[0, 3, 8]} />
-      <CameraController progress={sectionProgress} />
 
       <Butterflies visible={!isSectionActive} />
       <Grass visible={!isSectionActive} />
