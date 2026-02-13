@@ -15,13 +15,13 @@ const Four = () => {
             naturel des choses.
           </p>
           <div className="four-header-send">
-            <input type="text" />
+            <input className="four-header-send-input" type="text" />
             <button className="white">Envoyer</button>
           </div>
         </div>
         <span className="four-number number-section number-white">IV</span>
         <div className="four-hole">
-          <p>CE N'EST PAS</p>
+          <p className="four-hole-invisible">CE N'EST PAS</p>
         </div>
       </div>
     </section>

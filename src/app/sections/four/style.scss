@@ -9,13 +9,16 @@
     align-items: center;
     justify-content: center;
 
-    height: 100svh;
+    height: fit-content;
 
     background-color: $primary;
+    padding: 35svh 0 15svh 0;
 }
 
 .four {
-    grid-template-areas: "number header";
+    grid-template-areas: "number header"
+        "hole hole";
+    row-gap: 15svh;
 
     &-header {
         grid-area: header / 4 / header / 10;
@@ -48,10 +51,40 @@
         }
 
         &-send {
+
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 8px;
+
+            margin-top: 42px;
+
+            &-input {
+                appearance: none;
+
+                width: fit-content;
+                min-width: 250px;
+                height: fit-content;
+
+                padding: 10px 8px;
+
+                background-color: $white;
+                color: $primary;
+                border-radius: 6px;
+                overflow: hidden;
+                border: 0;
+
+                font-size: 16px;
+                font-family: $font-accent;
+                line-height: normal;
+
+                cursor: pointer;
+
+                &:focus {
+                    border-radius: 6px;
+                    overflow: hidden;
+                }
+            }
         }
     }
 
@@ -62,6 +95,17 @@
     }
 
     &-hole {
-        display: none;
+        grid-area: hole / span 12;
+        margin: 0 auto;
+
+        &-invisible {
+            font-size: 215px;
+
+            width: 100%;
+
+            color: rgba($secondary, 0.3);
+
+            margin: 0;
+        }
     }
 }

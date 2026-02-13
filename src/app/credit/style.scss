@@ -1,0 +1,36 @@
+@use "@styles/global.scss" as *;
+@use "@styles/variables.scss" as *;
+
+.credit {
+    &-section {
+        grid-template-areas: "title title";
+        align-items: flex-end;
+
+        min-height: 100svh;
+
+        padding-bottom: 128px;
+
+        h1 {
+            grid-area: title / span 12;
+
+            margin: 0;
+
+            font-family: $font-accent;
+            font-size: 350px;
+            line-height: 350px;
+
+            color: $primary;
+        }
+    }
+
+    &-text {
+        padding-bottom: 15svh;
+
+        h2 {
+            font-family: $font-accent;
+            color: $primary;
+        }
+    }
+
+
+}

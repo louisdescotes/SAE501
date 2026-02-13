@@ -43,6 +43,12 @@ main {
     z-index: 50;
 }
 
+a,
+a:visited,
+a:active {
+    color: $primary;
+}
+
 *:focus {
     border-radius: 2px;
     outline: 2px solid $primary;
