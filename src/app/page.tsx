@@ -1,5 +1,7 @@
 "use client";
 
+import { useRef } from "react";
+
 import Scene from "./scene";
 import Hero from "./sections/hero";
 import One from "./sections/one";
@@ -9,6 +11,8 @@ import Four from "./sections/four";
 import Five from "./sections/five";
 
 const Home = () => {
+  const fourRef = useRef<HTMLElement | null>(null);
+
   return (
     <>
       <main>
@@ -16,11 +20,13 @@ const Home = () => {
         <One />
         <Two />
         <Three />
-        <Four />
+        <Four ref={fourRef} />
         <Five />
       </main>
-      <Scene />
+
+      <Scene sectionRef={fourRef} />
     </>
   );
 };
+
 export default Home;
