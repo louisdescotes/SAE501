@@ -13,7 +13,7 @@ function CameraController({ progress }: { progress: number }) {
   const { camera } = useThree();
 
   useFrame(() => {
-    const isHumanSection = progress > 0 && progress < 1;
+    const isHumanSection = progress > 0 && progress < 1.5;
 
     if (!isHumanSection) {
       const scroll = window.scrollY;
@@ -47,9 +47,9 @@ const Scene = ({ sectionRef }: Props) => {
       const vh = window.innerHeight;
 
       const progress = (vh - rect.top) / (vh + rect.height) + 0.5;
-      console.log(progress);
 
       const clamped = Math.min(Math.max(progress, 0), 1.5);
+      console.log(clamped);
       setSectionProgress(clamped);
     };
 

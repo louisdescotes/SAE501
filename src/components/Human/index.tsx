@@ -12,7 +12,7 @@ const Human = ({ progress }: { progress: number }) => {
   useFrame(() => {
     if (!ref.current) return;
 
-    const visible = progress > 0 && progress < 1;
+    const visible = progress > 0 && progress < 1.5;
 
     ref.current.traverse((child: any) => {
       if (child.material) {
@@ -23,8 +23,8 @@ const Human = ({ progress }: { progress: number }) => {
     });
 
     if (!visible) return;
-    const y = -10 + progress * 8;
 
+    const y = -10 + progress * 8;
     ref.current.position.set(0, y, camera.position.z - 5);
   });
 
