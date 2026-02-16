@@ -10,6 +10,9 @@ import Three from "./sections/three";
 import Four from "./sections/four";
 import Five from "./sections/five";
 import Loader from "./loader";
+import Footer from "./sections/footer";
+import Seven from "./sections/seven";
+import Six from "./sections/six";
 
 const Home = () => {
   const fourRef = useRef<HTMLElement | null>(null);
@@ -25,6 +28,9 @@ const Home = () => {
         <Three />
         <Four ref={fourRef} />
         <Five />
+        <Six />
+        <Seven />
+        <Footer />
       </main>
 
       {!loadingFinished && <Loader onFinish={() => setLoadingFinished(true)} />}

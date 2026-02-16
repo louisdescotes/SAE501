@@ -3,6 +3,7 @@
 import { useProgress } from "@react-three/drei";
 import { useEffect, useState } from "react";
 import { motion, useMotionValue, useTransform } from "framer-motion";
+import { useLenis } from "lenis/react";
 
 const Loader = ({
   minDuration = 2000,
@@ -14,21 +15,27 @@ const Loader = ({
   const { active, progress } = useProgress();
   const [minTimePassed, setMinTimePassed] = useState(false);
   const [shouldFadeOut, setShouldFadeOut] = useState(false);
+  const lenis = useLenis();
 
   const x = useMotionValue(-40);
   const translateX = useTransform(x, (v) => `${v}%`);
 
   useEffect(() => {
+    if (!lenis) return;
+
     if (active || !minTimePassed) {
       document.body.style.overflow = "hidden";
+      lenis.stop();
     } else {
       document.body.style.overflow = "auto";
+      lenis.start();
     }
 
     return () => {
       document.body.style.overflow = "auto";
+      lenis.start();
     };
-  }, [active, minTimePassed]);
+  }, [active, minTimePassed, lenis]);
 
   useEffect(() => {
     let animationFrame: number;

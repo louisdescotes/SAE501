@@ -1,0 +1,30 @@
+@use "@styles/global.scss" as *;
+@use "@styles/variables.scss" as *;
+
+.footer-cont {
+    background-color: $primary;
+    color: $white;
+}
+
+.footer {
+    grid-template-areas: "header";
+
+    &-header {
+        grid-area: 1 / 1 / 1 / 12;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        padding-top: 40svh;
+
+        &-title {
+            font-family: $font-accent;
+        }
+
+        a {
+            margin-top: 42px;
+            color: $white !important;
+        }
+    }
+}

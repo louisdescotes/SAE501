@@ -1,0 +1,25 @@
+@use "@styles/global.scss" as *;
+@use "@styles/variables.scss" as *;
+
+.six-horizontal {
+    background-color: $primary;
+    display: flex;
+    gap: 2rem;
+    height: 100%;
+}
+
+.panel1 {
+    background-color: orange;
+}
+
+.panel2 {
+    background-color: yellow;
+}
+
+.panel3 {
+    background-color: yellowgreen;
+}
+
+.panel4 {
+    background-color: green;
+}

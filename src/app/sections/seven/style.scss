@@ -1,0 +1,50 @@
+@use "@styles/global.scss" as *;
+@use "@styles/variables.scss" as *;
+
+.seven-cont {
+    z-index: 50;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 100svh;
+
+    background-color: $white;
+}
+
+.seven {
+    height: 100svh;
+
+    &-header {
+        grid-area: 1 / 4 / 1 / 10;
+
+        height: 100%;
+        width: fit-content;
+
+        margin: 0 auto;
+
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 18px;
+
+        &-title {
+            margin: 0;
+            color: $secondary;
+
+            span {
+                font-family: $font-accent;
+            }
+        }
+
+        &-text {
+            color: $secondary;
+            font-family: $font;
+            font-style: normal;
+            font-weight: 300;
+            margin: 0;
+        }
+    }
+}

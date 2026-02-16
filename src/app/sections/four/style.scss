@@ -51,6 +51,8 @@
         }
 
         &-send {
+            position: relative;
+            z-index: 50;
 
             display: flex;
             align-items: center;
@@ -78,7 +80,7 @@
                 font-family: $font-accent;
                 line-height: normal;
 
-                cursor: pointer;
+                cursor: auto;
 
                 &:focus {
                     border-radius: 6px;
