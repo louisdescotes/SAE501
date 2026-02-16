@@ -1,0 +1,59 @@
+@use "@styles/global.scss" as *;
+@use "@styles/variables.scss" as *;
+
+.hcc-container {
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100vw;
+    height: 100vh;
+
+
+    padding: 20px;
+
+    background: rgba($primary, 0.8);
+
+    overflow: auto;
+}
+
+.hcc-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    width: 100%;
+    max-width: 800px;
+    max-height: 90vh;
+
+    padding: 20px;
+
+    background: $white;
+
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.hcc-options {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    min-height: 100px;
+    max-height: 300px;
+
+    background-color: rgba(255, 255, 255, 0.8);
+
+    padding: 10px;
+    border: 4px dashed $primary;
+    border-radius: 5px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    touch-action: pan-y;
+}

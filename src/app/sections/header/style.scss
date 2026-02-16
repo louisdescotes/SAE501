@@ -25,7 +25,8 @@
         justify-content: center;
         gap: 24px;
 
-        a {
+        a,
+        a:visited {
             font-family: $font-accent;
 
             color: $white;
