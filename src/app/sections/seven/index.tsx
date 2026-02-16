@@ -6,7 +6,7 @@ const Seven = () => {
       <div className="seven grid-p columns">
         <div className="seven-header">
           <h2 className="seven-header-title type-42">
-            Chaque détail <span>compte</span>
+            Chaque détail <span className="type-42">compte</span>
           </h2>
           <p className="type-18 seven-header-text">
             Même le site le plus impressionnant peut perdre toute crédibilité si

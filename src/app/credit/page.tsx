@@ -4,7 +4,7 @@ const Credit = () => {
   return (
     <main className="credit grid-p ">
       <section className="credit-section columns">
-        <h1>Crédit</h1>
+        <h1 className="type-350">Crédit</h1>
       </section>
       <section className="credit-text">
         <div>

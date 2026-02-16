@@ -6,7 +6,7 @@ const Five = () => {
       <div className="five grid-p columns">
         <div className="five-header">
           <h2 className="five-header-title type-42">
-            Comment la <span>réintroduire</span>
+            Comment la <span className="type-42">réintroduire</span>
           </h2>
           <p className="type-18 five-header-text">
             La patience se reconstruit pas à pas, en réintroduisant des pauses

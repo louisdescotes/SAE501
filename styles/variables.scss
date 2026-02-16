@@ -1,12 +1,12 @@
 $font: 'museoSans';
 $font-accent: 'apocNormal';
-$font-size: 18px;
+$font-size: 16px;
 
-// $header-top: 20px;
-// $logo-w: 225px;
 $side-gap-header: clamp(16px, calc(4vw - 1rem), 72px);
 $side-gap: max($side-gap-header, calc((100vw - 1860px) / 2));
-$gutter: 30px;
+
+$gap-42: clamp(1.375rem, 1.786vw + 1.018rem, 2.625rem);
+$gap-128: clamp(4rem, 13.482vw + 1.304rem, 13.4375rem);
 
 $primary: #D9772A;
 $secondary: #572700;

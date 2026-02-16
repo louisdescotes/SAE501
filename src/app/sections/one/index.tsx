@@ -6,8 +6,8 @@ const One = () => {
       <div className="one grid-p columns">
         <div className="one-header">
           <h2 className="one-header-title type-42">
-            <span>L’impatience</span> n’est pas un défaut. C’est un{" "}
-            <span>symptôme.</span>
+            <span className="type-42">L’impatience</span> n’est pas un défaut.
+            C’est un <span className="type-42">symptôme.</span>
           </h2>
           <p className="type-18 one-header-text">
             Nous avons appris à vivre dans un environnement où tout est optimisé

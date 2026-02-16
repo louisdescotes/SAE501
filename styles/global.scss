@@ -128,7 +128,7 @@ html.lenis {
     &-section {
         color: rgba($secondary, 0.30);
 
-        font-size: 675px;
+        font-size: clamp(9.375rem, 46.875vw + 0rem, 42.1875rem);
 
         font-family: $font-accent;
         font-style: italic;
@@ -176,60 +176,45 @@ button {
     }
 }
 
-/** MODIFY **/
-
-.type-16 {
-    font-size: .94em;
-    line-height: 1.5em
+.type-675 {
+    font-size: clamp(9.375rem, 46.875vw + 0rem, 42.1875rem);
+    line-height: 1.25em;
+    letter-spacing: 0;
 }
 
-.type-18 {
-    font-size: 18px;
-    line-height: 1.3em;
-    letter-spacing: 0
+.type-350 {
+    font-size: clamp(6rem, 22.679vw + 1.464rem, 21.875rem);
+    line-height: 1.25em;
+    letter-spacing: 0;
 }
 
-.type-22 {
-    font-size: clamp(1.25rem, 1.1vw + .3rem, 22px);
-    line-height: 1.3em
+.type-215 {
+    font-size: clamp(4rem, 13.482vw + 1.304rem, 13.4375rem);
+    line-height: 1.25em;
+    letter-spacing: 0;
 }
 
-.type-32 {
-    font-size: clamp(1.28rem, 1.3vw + .5rem, 32px);
+.type-64 {
+    font-size: clamp(2.5rem, 2.143vw + 2.071rem, 4rem);
     line-height: 1.25em;
     letter-spacing: 0
 }
 
-.type-40 {
-    font-size: clamp(24px, 1.75vw + .5rem, 40px);
-    line-height: 1.2em
+.type-42 {
+    font-size: clamp(2.25rem, 0.536vw + 2.143rem, 2.625rem);
+    line-height: 1.25em;
+    letter-spacing: 0
 }
 
-.type-42,
-.type-42>span {
-    font-size: clamp(28px, 1.75vw + .5rem, 42px);
-    line-height: 1.2em
+.type-32 {
+    font-size: clamp(1.5rem, 0.714vw + 1.357rem, 2rem);
+    line-height: 1.25em;
+    letter-spacing: 0
 }
 
-.type-45 {
-    font-size: clamp(26px, 1.92vw + .5rem, 45px);
-    line-height: 1.2em
-}
-
-.type-64 {
-    font-size: clamp(32px, 3.4vw + 1rem, 64px);
-    line-height: 1em
-}
-
-
-.type-80 {
-    font-size: clamp(32px, 3.4vw + 1rem, 80px);
-    line-height: 1em
-}
-
-.type-120 {
-    font-size: clamp(32px, 5.4vw + 1rem, 120px);
-    line-height: 1em;
+.type-18 {
+    font-size: clamp(1rem, 0.179vw + 0.964rem, 1.125rem);
+    line-height: 1.5em;
     letter-spacing: 0
 }
 
@@ -249,7 +234,7 @@ button {
     &-load {
         position: relative;
         color: $primary;
-        margin-bottom: 128px;
+        margin-bottom: $gap-128;
 
         span {
             font-family: $font-accent;

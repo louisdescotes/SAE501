@@ -8,7 +8,7 @@
 
         min-height: 100svh;
 
-        padding-bottom: 128px;
+        padding-bottom: $gap-128;
 
         h1 {
             grid-area: title / span 12;
@@ -16,15 +16,12 @@
             margin: 0;
 
             font-family: $font-accent;
-            font-size: 350px;
-            line-height: 350px;
-
             color: $primary;
         }
     }
 
     &-text {
-        padding-bottom: 15svh;
+        padding-bottom: $gap-42;
 
         h2 {
             font-family: $font-accent;

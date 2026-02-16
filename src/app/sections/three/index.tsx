@@ -6,7 +6,8 @@ const Three = () => {
       <div className="three grid-p columns">
         <div className="three-header">
           <h2 className="three-header-title type-42">
-            La <span>gratification immédiate</span> reprogramme ton cerveau
+            La <span className="type-42">gratification immédiate</span>{" "}
+            reprogramme ton cerveau
           </h2>
           <p className="type-18 three-header-text">
             Likes, vues, notifications, réponses instantanées… chaque

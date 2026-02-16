@@ -19,7 +19,7 @@ const Two = () => {
         <div className="two columns grid-p">
           <div className="two-header">
             <h2 className="two-header-title type-42">
-              L’instantanéité <span>permanente</span>
+              L’instantanéité <span className="type-42">permanente</span>
             </h2>
             <span className="two-header-number number-section number-white">
               II

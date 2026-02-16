@@ -9,7 +9,8 @@ const Four = forwardRef<HTMLElement>((props, ref) => {
       <div className="four grid-p columns">
         <div className="four-header">
           <h2 className="four-header-title type-42">
-            La <span>solution</span> n’est pas de tout arrêter
+            La <span className="type-42">solution</span> n’est pas de tout
+            arrêter
           </h2>
           <p className="type-18 four-header-text">
             Fuir, couper, ralentir le monde autour de toi ne change rien.
@@ -26,7 +27,7 @@ const Four = forwardRef<HTMLElement>((props, ref) => {
         <span className="four-number number-section number-white">IV</span>
 
         <div className="four-hole">
-          <p className="four-hole-invisible">CE N'EST PAS</p>
+          <p className="four-hole-invisible type-215">CE N'EST PAS</p>
         </div>
       </div>
     </section>
