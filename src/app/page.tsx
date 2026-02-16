@@ -13,6 +13,7 @@ import Loader from "./loader";
 import Footer from "./sections/footer";
 import Seven from "./sections/seven";
 import Six from "./sections/six";
+import Header from "./sections/header";
 
 const Home = () => {
   const fourRef = useRef<HTMLElement | null>(null);
@@ -20,6 +21,7 @@ const Home = () => {
 
   return (
     <>
+      <Header />
       <Scene sectionRef={fourRef} loadingComplete={loadingFinished} />
       <main>
         <Hero />

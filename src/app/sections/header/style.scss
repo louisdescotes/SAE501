@@ -1,0 +1,36 @@
+@use "@styles/global.scss" as *;
+@use "@styles/variables.scss" as *;
+
+.header {
+    position: fixed;
+    top: -45px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    height: fit-content;
+
+    background-color: $primary;
+
+    padding: 12px 12px 12px 12px;
+
+    border-radius: 0 0 8px 8px;
+
+    border: 1px solid $white;
+    border-top: none;
+
+    &-nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 24px;
+
+        a {
+            font-family: $font-accent;
+
+            color: $white;
+            text-decoration: none;
+        }
+
+    }
+}

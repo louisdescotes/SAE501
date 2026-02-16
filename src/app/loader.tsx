@@ -17,7 +17,7 @@ const Loader = ({
   const [shouldFadeOut, setShouldFadeOut] = useState(false);
   const lenis = useLenis();
 
-  const x = useMotionValue(-40);
+  const x = useMotionValue(-35);
   const translateX = useTransform(x, (v) => `${v}%`);
 
   useEffect(() => {
