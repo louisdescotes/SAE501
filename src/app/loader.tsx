@@ -17,7 +17,7 @@ const Loader = ({
   const [shouldFadeOut, setShouldFadeOut] = useState(false);
   const lenis = useLenis();
 
-  const x = useMotionValue(-35);
+  const x = useMotionValue(0);
   const translateX = useTransform(x, (v) => `${v}%`);
 
   useEffect(() => {
@@ -42,7 +42,7 @@ const Loader = ({
 
     const animate = () => {
       const current = x.get();
-      const next = current + (progress - current) * 0.002;
+      const next = current + (progress - current) * 0.006;
       x.set(next);
       if (Math.abs(progress - next) > 0.1) {
         animationFrame = requestAnimationFrame(animate);
@@ -75,10 +75,10 @@ const Loader = ({
     >
       <div className="loading-load">
         <motion.div
-          style={{ x: translateX, rotate: "45deg" }}
+          style={{ x: translateX, y: "-50%", rotate: "45deg" }}
           className="loading-load-cover"
         />
-        <span className="type-120">Chargement...</span>
+        <span className="type-215">Chargement...</span>
       </div>
     </motion.div>
   );

@@ -13,6 +13,11 @@
 
     background-color: $primary;
     padding: 35svh 0 15svh 0;
+
+    @include media-max("md") {
+        height: fit-content;
+        padding: 8svh 0 10svh 0;
+    }
 }
 
 .four {
@@ -32,6 +37,10 @@
         justify-content: center;
         flex-direction: column;
         gap: 18px;
+
+        @include media-max("md") {
+            grid-area: header / 2 / header / 12;
+        }
 
         &-title {
             margin: 0;
@@ -60,6 +69,10 @@
             gap: 8px;
 
             margin-top: 42px;
+
+            @include media-max("sm") {
+                flex-direction: column;
+            }
 
             &-input {
                 appearance: none;
@@ -101,12 +114,16 @@
         margin: 0 auto;
 
         &-invisible {
-
             width: 100%;
 
             color: rgba($secondary, 0.3);
 
             margin: 0;
+
+
+            @include media-max("sm") {
+                text-align: center;
+            }
         }
     }
 }

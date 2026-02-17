@@ -12,11 +12,15 @@
     height: 100svh;
 
     background-color: $white;
+
+    @include media-max("md") {
+        min-height: 60svh;
+        height: fit-content;
+        padding: 10svh 0 10svh 0;
+    }
 }
 
 .seven {
-    height: 100svh;
-
     &-header {
         grid-area: 1 / 4 / 1 / 10;
 
@@ -29,6 +33,10 @@
         justify-content: center;
         flex-direction: column;
         gap: 18px;
+
+        @include media-max("md") {
+            grid-area: 1 / span 12;
+        }
 
         &-title {
             margin: 0;

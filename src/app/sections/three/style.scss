@@ -13,6 +13,21 @@
 
     overflow: hidden;
 
+    @include media-max("md") {
+        align-items: flex-start;
+
+        &::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+
+            background-color: rgba($white, $alpha: .9);
+            filter: blur(3px);
+
+            z-index: -1;
+        }
+    }
+
     &::after {
         content: '';
         position: absolute;
@@ -31,6 +46,10 @@
 .three {
     grid-template-areas: "header number";
 
+    @include media-max("md") {
+        grid-template-areas: "number number" "header header";
+    }
+
     &-header {
         grid-area: header / span 6;
 
@@ -45,6 +64,12 @@
         justify-content: center;
         flex-direction: column;
         gap: 18px;
+
+        @include media-max("md") {
+            grid-area: 2 / span 12;
+
+            max-width: 100%;
+        }
 
         &-title {
             margin: 0;
@@ -67,5 +92,10 @@
     &-number {
         grid-area: number / span 6;
         text-align: end;
+
+        @include media-max("md") {
+            text-align: center;
+            grid-area: 1 / span 12;
+        }
     }
 }

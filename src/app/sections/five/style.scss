@@ -12,10 +12,20 @@
     height: 100svh;
 
     background-color: $white;
+
+    @include media-max("md") {
+        height: fit-content;
+        padding: 2svh 0 10svh 0;
+    }
 }
 
 .five {
     grid-template-areas: "header number";
+
+    @include media-max("md") {
+        grid-template-areas: "number number" "header header";
+        padding: $gap-42 0;
+    }
 
     &-header {
         grid-area: header / span 6;
@@ -29,6 +39,10 @@
         justify-content: center;
         flex-direction: column;
         gap: 18px;
+
+        @include media-max("md") {
+            grid-area: 2 / span 12;
+        }
 
         &-title {
             margin: 0;
@@ -51,5 +65,11 @@
     &-number {
         grid-area: number / span 6;
         text-align: end;
+
+
+        @include media-max("md") {
+            grid-area: 1 / span 12;
+            text-align: center;
+        }
     }
 }

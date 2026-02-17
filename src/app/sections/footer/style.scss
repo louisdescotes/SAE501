@@ -18,13 +18,29 @@
 
         padding-top: 40svh;
 
+        @include media-max("md") {
+            align-items: flex-start;
+            flex-direction: column;
+
+            padding-bottom: 5svh;
+            padding-top: 20svh;
+        }
+
         &-title {
             font-family: $font-accent;
+
+            @include media-max("md") {
+                margin: 0;
+            }
         }
 
         a {
             margin-top: $gap-42;
             color: $white !important;
+
+            @include media-max("md") {
+                margin-top: 24px;
+            }
         }
     }
 }

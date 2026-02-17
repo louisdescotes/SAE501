@@ -19,6 +19,10 @@
 
         margin-bottom: $gap-128;
 
+        @include media-max("sm") {
+            text-align: center;
+        }
+
         h1 {
             font-family: $font-accent;
             line-height: normal;
@@ -36,6 +40,10 @@
             line-height: normal;
             letter-spacing: -1.92px;
             margin: 0;
+
+            @include media-max("md") {
+                letter-spacing: -1px;
+            }
         }
     }
 }
