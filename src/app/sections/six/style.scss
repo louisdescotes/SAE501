@@ -4,22 +4,140 @@
 .six-horizontal {
     background-color: $primary;
     display: flex;
-    gap: 2rem;
+    gap: 2vw;
     height: 100%;
+    width: fit-content;
+    margin-right: 60svw;
 }
 
-.panel1 {
-    background-color: orange;
+.six-sticky {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow: hidden;
+    background-color: $primary;
 }
 
-.panel2 {
-    background-color: yellow;
+.six-cont {
+    z-index: 50;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 100%;
+    width: fit-content;
+
+    background-color: $primary;
 }
 
-.panel3 {
-    background-color: yellowgreen;
+.six {
+    grid-template-areas: "header";
+    width: 100svw;
+
+    &-header {
+        grid-area: header / 4 / header / 10;
+
+        height: 100%;
+        width: fit-content;
+
+        margin: 0 auto;
+
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 18px;
+
+        @include media-max("md") {
+            grid-area: header / 1 / header / 12;
+        }
+
+        &-title {
+            margin: 0;
+            color: $white;
+
+            span {
+                font-family: $font-accent;
+            }
+        }
+
+        &-text {
+            color: $white;
+            font-family: $font;
+            font-style: normal;
+            font-weight: 300;
+            margin: 0;
+        }
+    }
 }
 
-.panel4 {
-    background-color: green;
+.panel {
+    flex: 0 0 auto;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    @include media-max("md") {
+        padding: 0 10vw;
+    }
+
+    &-cont {
+        max-width: 700px;
+        width: 100%;
+        height: fit-content;
+
+        @include media-max("md") {
+            max-width: 300px;
+        }
+    }
+
+    &-1,
+    &-3,
+    &-5 {
+        .panel-cont {
+            margin-top: 250px;
+
+            @include media-max("md") {
+                margin-top: 100px;
+            }
+        }
+    }
+
+    &-2,
+    &-4,
+    &-6 {
+        .panel-cont {
+            margin-top: -250px;
+
+            @include media-max("md") {
+                margin-top: -100px;
+            }
+        }
+    }
+
+    img {
+        width: 700px;
+        height: 300px;
+        object-fit: cover;
+
+
+        @include media-max("md") {
+            width: 300px;
+            height: 150px;
+        }
+    }
+
+    h3 {
+        color: $white;
+        margin: 16px 0 8px 0;
+    }
+
+    p {
+        color: $white;
+        margin: 0;
+    }
 }

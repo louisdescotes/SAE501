@@ -1,3 +1,4 @@
+import SplitText from "@/src/components/textAppear";
 import "./style.scss";
 
 const Two = () => {
@@ -26,14 +27,10 @@ const Two = () => {
             </span>
           </div>
           <div className="two-text">
-            <p className="type-18 ">
-              Le cerveau s’adapte toujours à son environnement. Lorsqu’il reçoit
-              régulièrement des récompenses rapides (notifications, messages,
-              validations sociales...) il ajuste ses attentes.
-              <br />
-              Progressivement, le délai devient inconfortable. Le silence
-              devient suspect. L’incertitude devient stressante.
-            </p>
+            <SplitText
+              text="Le cerveau s’adapte toujours à son environnement. Lorsqu’il reçoit régulièrement des récompenses rapides (notifications, messages, validations sociales...) il ajuste ses attentes. <br /> Progressivement, le délai devient inconfortable. Le silence devient suspect. L’incertitude devient stressante."
+              className="type-18"
+            />
           </div>
         </div>
       </section>

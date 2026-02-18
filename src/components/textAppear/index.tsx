@@ -1,74 +1,88 @@
 "use client";
 
-import "./style.scss";
-import { motion } from "motion/react";
-import { useRef, useEffect, useState } from "react";
+import React, { JSX } from "react";
+import { motion } from "framer-motion";
 
-interface Props {
+type SplitTextProps = {
   text: string;
+  as?: keyof JSX.IntrinsicElements;
   className?: string;
   delay?: number;
-}
+  duration?: number;
+};
 
-export default function TextAppear({ text, className, delay = 0 }: Props) {
-  const [lines, setLines] = useState<string[]>([]);
-  const textRef = useRef<HTMLDivElement>(null);
+const container = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.008,
+    },
+  },
+};
 
-  useEffect(() => {
-    const textEl = textRef.current;
-    if (!textEl) return;
+const word = {
+  hidden: {
+    opacity: 0,
+    y: 10,
+    filter: "blur(3px)",
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+  },
+};
 
-    const words = text.split(" ");
-    let line: string[] = [];
-    const output: string[] = [];
+export default function SplitText({
+  text,
+  as = "p",
+  className,
+  delay = 0,
+  duration = 0.5,
+}: SplitTextProps) {
+  const MotionTag = motion(as as any);
 
-    textEl.innerHTML = "";
-
-    words.forEach((word) => {
-      textEl.innerHTML = [...line, word].join(" ");
-
-      if (textEl.scrollWidth > textEl.clientWidth) {
-        output.push(line.join(" "));
-        line = [word];
-        textEl.innerHTML = word;
-      } else {
-        line.push(word);
-      }
-    });
-
-    if (line.length) output.push(line.join(" "));
-
-    setLines(output);
-  }, [text]);
+  const lines = text.split(/<br\s*\/?>/i);
 
   return (
-    <>
-      <div ref={textRef} className="textAppear" />
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.8 }}
-      >
-        {lines.map((line, index) => (
-          <div className="textAppear-line" key={index}>
-            <motion.p
-              className={`${className}`}
-              variants={{
-                hidden: { y: "100%" },
-                visible: { y: "0%" },
-              }}
-              transition={{
-                type: "spring",
-                damping: 80,
-                stiffness: 550,
-                delay: delay + index * 0.1,
-              }}
-            >
-              {line}
-            </motion.p>
-          </div>
-        ))}
-      </motion.div>
-    </>
+    <MotionTag
+      className={className}
+      variants={container}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: false, margin: "-100px" }}
+      transition={{ delay }}
+      style={{ display: "inline-block" }}
+    >
+      {lines.map((line, lineIndex) => {
+        const words = line.trim().split(" ");
+
+        return (
+          <React.Fragment key={lineIndex}>
+            {words.map((w, i) => (
+              <motion.span
+                key={i}
+                variants={word}
+                transition={{
+                  duration,
+                  type: "spring",
+                  damping: 80,
+                  stiffness: 800,
+                }}
+                style={{
+                  display: "inline-block",
+                  marginRight: "0.25em",
+                  whiteSpace: "pre",
+                }}
+              >
+                {w}
+              </motion.span>
+            ))}
+
+            {lineIndex < lines.length - 1 && <br />}
+          </React.Fragment>
+        );
+      })}
+    </MotionTag>
   );
 }

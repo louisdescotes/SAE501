@@ -14,6 +14,8 @@
     background-color: $primary;
     padding: 35svh 0 15svh 0;
 
+    overflow: hidden;
+
     @include media-max("md") {
         height: fit-content;
         padding: 8svh 0 10svh 0;
@@ -110,8 +112,47 @@
     }
 
     &-hole {
+        position: relative;
         grid-area: hole / span 12;
         margin: 0 auto;
+
+        &-hole {
+            z-index: 40;
+            position: absolute;
+            left: 50%;
+            bottom: -50px;
+
+            width: 90svw;
+            max-width: 800px;
+            height: 10svh;
+
+
+            border-radius: 50%;
+
+            transform: translate(-50%) rotateX(75deg);
+            background: radial-gradient(ellipse at center, $secondary 0%, #2e1200 100%);
+            transform-style: preserve-3d;
+            perspective: 500px;
+
+            background: $secondary;
+        }
+
+        &-item {
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            background-color: $white;
+            border-radius: 8px;
+
+            transform: translateX(50%);
+
+            padding: 10px 24px;
+
+            p {
+                color: $primary;
+                margin: 0;
+            }
+        }
 
         &-invisible {
             width: 100%;

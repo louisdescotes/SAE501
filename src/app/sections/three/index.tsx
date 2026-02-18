@@ -1,3 +1,4 @@
+import SplitText from "@/src/components/textAppear";
 import "./style.scss";
 
 const Three = () => {
@@ -9,15 +10,14 @@ const Three = () => {
             La <span className="type-42">gratification immédiate</span>{" "}
             reprogramme ton cerveau
           </h2>
-          <p className="type-18 three-header-text">
-            Likes, vues, notifications, réponses instantanées… chaque
-            interaction rapide agit comme une micro-récompense. Ton cerveau
-            apprend que la validation doit arriver tout de suite, sans délai.{" "}
-            <br />
-            Résultat : plus les récompenses sont rapides et fréquentes, plus
-            l’attente devient difficile à tolérer.
-          </p>
-          <button>Button</button>
+          <SplitText
+            text="Likes, vues, notifications, réponses instantanées… chaque interaction rapide agit comme une micro-récompense. Ton cerveau apprend que la validation doit arriver tout de suite, sans délai. <br /> Résultat : plus les récompenses sont rapides et fréquentes, plus l’attente devient difficile à tolérer."
+            className="type-18 three-header-text"
+            as="p"
+          />
+          <a href="/mauvaisepage">
+            <button>Y aller</button>
+          </a>
         </div>
         <span className="three-number number-section">III</span>
       </div>

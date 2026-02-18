@@ -177,43 +177,50 @@ button {
     }
 }
 
-.type-675 {
+.type-675,
+.ype-675>* {
     font-size: clamp(9.375rem, 46.875vw + 0rem, 42.1875rem);
     line-height: 1.25em;
     letter-spacing: 0;
 }
 
-.type-350 {
+.type-350,
+.ype-350>* {
     font-size: clamp(6rem, 22.679vw + 1.464rem, 21.875rem);
     line-height: 1.25em;
     letter-spacing: 0;
 }
 
-.type-215 {
+.type-215,
+.ype-215>* {
     font-size: clamp(4rem, 10.482vw + 1.304rem, 13.4375rem);
     line-height: 1.25em;
     letter-spacing: 0;
 }
 
-.type-64 {
+.type-64,
+.type-64>* {
     font-size: clamp(2.5rem, 2.143vw + 2.071rem, 4rem);
     line-height: 1.25em;
     letter-spacing: 0
 }
 
-.type-42 {
+.type-42,
+.type-42>* {
     font-size: clamp(2.25rem, 0.536vw + 2.143rem, 2.625rem);
     line-height: 1.25em;
     letter-spacing: 0
 }
 
-.type-32 {
+.type-32,
+.type-32>* {
     font-size: clamp(1.5rem, 0.714vw + 1.357rem, 2rem);
     line-height: 1.25em;
     letter-spacing: 0
 }
 
-.type-18 {
+.type-18,
+.type-18>* {
     font-size: clamp(1rem, 0.179vw + 0.964rem, 1.125rem);
     line-height: 1.5em;
     letter-spacing: 0
