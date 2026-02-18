@@ -1,0 +1,80 @@
+@use "@styles/global.scss" as *;
+@use "@styles/variables.scss" as *;
+
+.page-loader {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.page-loader__content {
+    text-align: center;
+}
+
+.page-loader__bar {
+    width: 256px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.page-loader__progress {
+    height: 100%;
+    background: white;
+    width: 0%;
+    animation: loader-progress 5s linear forwards;
+}
+
+.page-loader__text {
+    font-size: 14px;
+    letter-spacing: 0.05em;
+}
+
+@keyframes loader-progress {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+.scroll-gate {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $primary;
+    color: $white;
+}
+
+.scroll-gate__loader {
+    text-align: center;
+}
+
+.scroll-gate__bar {
+    width: 320px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+.scroll-gate__progress {
+    height: 100%;
+    background: $white;
+    width: 0%;
+    transition: width 0.15s linear;
+}
+
+.scroll-gate__text {
+    font-size: 14px;
+    letter-spacing: 0.05em;
+}
