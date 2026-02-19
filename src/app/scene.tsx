@@ -4,9 +4,8 @@ import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { useEffect, useState, Suspense, useRef } from "react";
 import { PerspectiveCamera } from "@react-three/drei";
 import * as THREE from "three";
-
-import Grass from "../components/Grass";
 import Butterflies from "../components/Butterflies";
+import Grass from "../components/Grass";
 import MovingClouds from "../components/Clouds";
 import Human from "../components/Human";
 
