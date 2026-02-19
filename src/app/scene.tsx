@@ -4,9 +4,9 @@ import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { useEffect, useState, Suspense, useRef } from "react";
 import { PerspectiveCamera } from "@react-three/drei";
 import * as THREE from "three";
-import Butterflies from "../components/butterflies";
-import Grass from "../components/grass";
-import MovingClouds from "../components/clouds";
+import Butterflies from "../components/Butterflies";
+import Grass from "../components/Grass";
+import MovingClouds from "../components/Clouds";
 import Human from "../components/Human";
 
 function lerp(start: number, end: number, factor: number) {
