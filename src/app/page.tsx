@@ -15,6 +15,7 @@ import Seven from "./sections/seven";
 import Six from "./sections/six";
 import Header from "./sections/header";
 import ScrollGate from "../components/fakeLoader/ScrollGate";
+import HorribleCookieConsent from "./sections/popup";
 
 const Home = () => {
   const fourRef = useRef<HTMLElement | null>(null);
@@ -40,7 +41,7 @@ const Home = () => {
   return (
     <>
       <Header />
-      {/* <HorribleCookieConsent /> */}
+      <HorribleCookieConsent />
       <Scene sectionRef={fourRef} loadingComplete={loadingFinished} />
       <main>
         <Hero />
@@ -61,7 +62,7 @@ const Home = () => {
         )}
       </main>
 
-      {/* {!loadingFinished && <Loader onFinish={() => setLoadingFinished(true)} />} */}
+      {!loadingFinished && <Loader onFinish={() => setLoadingFinished(true)} />}
     </>
   );
 };
